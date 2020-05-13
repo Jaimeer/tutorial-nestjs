@@ -1,0 +1,28 @@
+{
+  "eslint.autoFixOnSave": true,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "sqltools.connections": [
+    {
+      "connectionTimeout": 30,
+      "database": "promotool",
+      "dialect": "PostgreSQL",
+      "name": "promotool-live-read",
+      "password": "3krmwwhMaL78Cze",
+      "port": 5432,
+      "server": "promotool-live-read.csp1iiqjdjpj.eu-west-1.rds.amazonaws.com",
+      "username": "pt_user"
+    },
+    {
+      "database": "bookstore",
+      "dialect": "PostgreSQL",
+      "name": "Postgresc- Docker",
+      "password": "password1",
+      "port": 5432,
+      "server": "localhost",
+      "username": "postgres"
+    }
+  ]
+}

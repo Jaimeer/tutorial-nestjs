@@ -1,0 +1,17 @@
+{
+  "type": "postgres",
+  "username": "postgres",
+  "password": "password",
+  "host": "localhost",
+  "posrt": 5432,
+  "database": "bookstore",
+  "entities": [
+    "src/**/**/*.entities{.ts,.js}"
+  ],
+  "migrations": [
+    "src/database/migrations/*{.ts,.js}"
+  ],
+  "cli": {
+    "migrationDir": "src/database/migrations"
+  }
+}
