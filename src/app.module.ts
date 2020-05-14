@@ -5,11 +5,12 @@ import { ConfigModule } from './config/config.module'
 import { ConfigService } from './config/config.service'
 import { Configuration } from './config/config.keys'
 import { DatabaseModule } from './database/database.module'
-import { UserModule } from './module/user/user.module'
-import { RoleModule } from './module/role/role.module';
+import { UserModule } from './modules/user/user.module'
+import { RoleModule } from './modules/role/role.module'
+import { AuthModule } from './modules/auth/auth.module'
 
 @Module({
-  imports: [ConfigModule, DatabaseModule, UserModule, RoleModule],
+  imports: [ConfigModule, DatabaseModule, UserModule, RoleModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
