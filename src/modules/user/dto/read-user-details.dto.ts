@@ -9,5 +9,5 @@ export class ReadUserDetailsDto {
 
   @Expose()
   @IsString()
-  readonly lastName: string
+  readonly lastname: string
 }

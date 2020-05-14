@@ -13,6 +13,7 @@ import {
 import { UserDetails } from './user.details.entity'
 import { Role } from '../role/role.entity'
 import { status } from '../../shared/entityStatus.enum'
+import { Book } from '../book/book.entity'
 
 @Entity('users')
 export class User extends BaseEntity {
@@ -43,6 +44,13 @@ export class User extends BaseEntity {
   )
   @JoinTable({ name: 'user_roles' })
   roles: Role[]
+
+  @ManyToMany(
+    type => Book,
+    role => role.authors,
+  )
+  @JoinTable({ name: 'user_books' })
+  books: Book[]
 
   @Column({ type: 'varchar', default: status.ACTIVE, length: 8 })
   status: string

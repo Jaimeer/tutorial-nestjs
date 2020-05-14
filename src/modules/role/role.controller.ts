@@ -9,8 +9,7 @@ import {
   ParseIntPipe,
 } from '@nestjs/common'
 import { RoleService } from './role.service'
-import { Role } from './role.entity'
-import { ReadRoleDto } from './dtos'
+import { ReadRoleDto, CreateRoleDto, UpdateRoleDto } from './dtos'
 
 @Controller('roles')
 export class RoleController {
@@ -22,7 +21,7 @@ export class RoleController {
   }
 
   @Post()
-  createRole(@Body() role: Role): Promise<ReadRoleDto> {
+  createRole(@Body() role: Partial<CreateRoleDto>): Promise<ReadRoleDto> {
     return this._roleService.create(role)
   }
 
@@ -34,7 +33,7 @@ export class RoleController {
   @Patch(':roleId')
   updateRole(
     @Param('roleId', ParseIntPipe) roleId: number,
-    @Body() role: Role,
+    @Body() role: Partial<UpdateRoleDto>,
   ): Promise<ReadRoleDto> {
     return this._roleService.update(roleId, role)
   }

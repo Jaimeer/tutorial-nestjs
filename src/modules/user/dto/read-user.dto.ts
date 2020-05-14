@@ -1,6 +1,7 @@
 import { IsNumber, IsEmail, IsString } from 'class-validator'
 import { ReadUserDetailsDto } from './read-user-details.dto'
 import { Type, Exclude, Expose } from 'class-transformer'
+import { ReadRoleDto } from 'src/modules/role/dtos'
 
 @Exclude()
 export class ReadUserDto {
@@ -19,4 +20,8 @@ export class ReadUserDto {
   @Expose()
   @Type(type => ReadUserDetailsDto)
   readonly details: ReadUserDetailsDto
+
+  @Expose()
+  @Type(type => ReadRoleDto)
+  readonly roles: ReadRoleDto[]
 }
