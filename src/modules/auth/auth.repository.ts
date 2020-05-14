@@ -22,7 +22,7 @@ export class AuthRepository extends Repository<User> {
       Role,
     )
     const defaultRole: Role = await roleRepository.findOne({
-      where: { name: RoleType.GENERAL, status: 'ACTIVE' },
+      where: { name: RoleType.GENERAL, status: status },
     })
     user.roles = [defaultRole]
 
